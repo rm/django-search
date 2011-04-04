@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+  <h2><a href="/blog/entry/{{ entry.slug }}/">{{ entry.title }}</a></h2>
+  <h3>by <a href="/blog/author/{{ entry.author.email }}/">{{ entry.author }}</a></h3>
+  <div>
+    {{ entry.text|safe }}
+  </div>
+  {% if entry.tags.all %}
+  <h4>Tags</h4>
+  <div>
+    {% for tag in entry.tags.all %}
+    <a href="/blog/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock body %}

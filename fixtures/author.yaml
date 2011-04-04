@@ -1,0 +1,18 @@
+- fields: {email: donald@example.com, name: Donald Duck}
+  model: blogapp.author
+  pk: 1
+- fields: {email: mickey@example.com, name: Mickey Mouse}
+  model: blogapp.author
+  pk: 2
+- fields: {email: scrooge@example.com, name: Uncle Scrooge}
+  model: blogapp.author
+  pk: 3
+- fields: {email: batman@example.com, name: Bruce Wayne}
+  model: blogapp.author
+  pk: 5
+- fields: {email: superman@example.com, name: Clark Kent}
+  model: blogapp.author
+  pk: 6
+- fields: {email: spiderman@example.com, name: Peter Parker}
+  model: blogapp.author
+  pk: 4

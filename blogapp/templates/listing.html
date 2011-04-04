@@ -1,0 +1,5 @@
+{% for entry in entries %}
+<div>
+  <p><b><a href="/blog/entry/{{ entry.slug }}/">{{ entry.title }}</a></b> by <a href="/blog/author/{{ entry.author.email }}/">{{ entry.author }}</a></p>
+</div>
+{% endfor %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+  <h2>Authors</h2>
+  {% if authors %}
+  {% for author in authors %}
+  <div>
+    <a href="/blog/author/{{ author.email }}/">{{ author }}</a>
+    {% with author.entry_set.all|length as count %}
+    ({{ count }} entr{{ count|pluralize:"y,ies" }})
+    {% endwith %}
+  </div>
+  {% endfor %}
+  {% else %}
+  No authors yet!
+  {% endif %}
+</div>
+{% endblock body %}

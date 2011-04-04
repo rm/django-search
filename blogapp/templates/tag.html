@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+  <h2>Entries tagged {{ tag.name }}</h2>
+  {% if tag.entry_set.all %}
+  {% with tag.entry_set.all as entries %}
+  {% include "listing.html" %}
+  {% endwith %}
+  {% else %}
+  No entries tagged {{ tag.name }} yet!
+  {% endif %}
+</div>
+{% endblock body %}

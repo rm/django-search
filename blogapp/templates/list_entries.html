@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+  <h2>Entries</h2>
+  {% if entries %}
+  {% include "listing.html" %}
+  {% else %}
+  No entries yet!
+  {% endif %}
+</div>
+{% endblock body %}

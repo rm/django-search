@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+  <h2>Entries by {{ author.name }} &lt;{{ author.email }}&gt;</h2>
+  {% if author.entry_set.all %}
+  {% with author.entry_set.all as entries %}
+  {% include "listing.html" %}
+  {% endwith %}
+  {% else %}
+  No entries by {{ author.name }} yet!
+  {% endif %}
+</div>
+{% endblock body %}
