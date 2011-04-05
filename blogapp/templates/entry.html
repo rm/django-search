@@ -4,6 +4,7 @@
 <div>
   <h2><a href="/blog/entry/{{ entry.slug }}/">{{ entry.title }}</a></h2>
   <h3>by <a href="/blog/author/{{ entry.author.email }}/">{{ entry.author }}</a></h3>
+  <h4>on {{ entry.date }}</h4>
   <div>
     {{ entry.text|safe }}
   </div>
