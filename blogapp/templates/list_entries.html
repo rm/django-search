@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block body %}
+{% if query %}
+<div>
+  You searched for: <b>{{ query }}</b>
+</div>
+{% endif %}
 <div>
   <h2>Entries</h2>
   {% if entries %}

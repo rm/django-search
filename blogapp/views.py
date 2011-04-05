@@ -22,7 +22,9 @@ def list_authors(request):
 
 def list_entries(request):
     return render_to_response(
-        'list_entries.html', dict(entries=Entry.objects.all().order_by('-date')))
+        'list_entries.html',
+        dict(entries=Entry.objects.all().order_by('-date'),
+             query=request.GET.get('q')))
 
 def list_tags(request):
     return render_to_response(
