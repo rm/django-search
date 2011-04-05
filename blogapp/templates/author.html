@@ -3,8 +3,8 @@
 {% block body %}
 <div>
   <h2>Entries by {{ author.name }} &lt;{{ author.email }}&gt;</h2>
-  {% if author.entry_set.all %}
-  {% with author.entry_set.all as entries %}
+  {% if author.entries %}
+  {% with author.entries as entries %}
   {% include "listing.html" %}
   {% endwith %}
   {% else %}

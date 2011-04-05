@@ -7,12 +7,18 @@ class Author(models.Model):
     def __unicode__(self):
         return u'%s <%s>' % (self.name, self.email)
 
+    def entries(self):
+        return self.entry_set.all().order_by('-date')
+
 class Tag(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True)
 
     def __unicode__(self):
         return u'%s' % self.name
+
+    def entries(self):
+        return self.entry_set.all().order_by('-date')
 
 class Entry(models.Model):
     author = models.ForeignKey(Author)
