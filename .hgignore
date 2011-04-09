@@ -1,8 +1,8 @@
 .*\.pyc$
 .*~$
+env.sh
 generate/pg\d+\.txt
 generate/.*\.csv
 generate/firstnames.txt
 generate/lastnames.txt
 generate/tags.txt
-
