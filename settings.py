@@ -21,9 +21,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogapp',
-        'USER': 'blogapp',
-        'PASSWORD': 'blogapp',
+        'NAME': get_env('BLOGAPP_DB_NAME'),
+        'USER': get_env('BLOGAPP_DB_USER'),
+        'PASSWORD': get_env('BLOGAPP_DB_PASSWORD'),
         'HOST': '',
         'PORT': '',
     }

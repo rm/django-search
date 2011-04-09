@@ -1,0 +1,22 @@
+Generating Data
+===============
+
+Input
+-----
+
+generate/pg\d+\.txt
+    Texts from Project Gutenberg.  The code will strip out the
+    legalese footer and header.
+
+generate/firstnames.txt
+generate/lastnames.txt
+    Lists of common names for the authors.
+
+generate/tags.txt
+    List of words for tags.
+
+Output
+------
+
+generate/.*\.csv
+    Output - generated sample data.
