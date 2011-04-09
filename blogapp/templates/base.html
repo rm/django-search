@@ -4,7 +4,7 @@
   </head>
   <body>
     <h1>Blog Application</h1>
-    <form action="/blog/" method="GET">
+    <form action="/blog/search/" method="GET">
       <input type="text" name="q"
              {% if query %}value="{{ query }}"{% endif %}/>
       <input type="submit" value="Search" />

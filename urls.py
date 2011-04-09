@@ -10,6 +10,8 @@ urlpatterns = patterns(
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
+    (r'^blog/search/', include('haystack.urls')),
+
     (r'blog/entry/(.*)/$', 'entry'),
     (r'blog/author/(.*)/$', 'author'),
     (r'blog/tag/(.*)/$', 'tag'),
