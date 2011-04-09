@@ -21,10 +21,19 @@ def list_authors(request):
         'list_authors.html', dict(authors=Author.objects.all().order_by('name')))
 
 def list_entries(request):
+    query = request.GET.get('q')
+    if query:
+        entries = Entry.objects.raw(
+            """
+SELECT *, ts_rank_cd(search_tsv, query) rank
+FROM blogapp_entry, plainto_tsquery('%(query)s') query
+WHERE query @@ search_tsv
+ORDER BY rank DESC
+LIMIT 10;""" % dict(query=query))
+    else:
+        entries = Entry.objects.all().order_by('-date')
     return render_to_response(
-        'list_entries.html',
-        dict(entries=Entry.objects.all().order_by('-date'),
-             query=request.GET.get('q')))
+        'list_entries.html', dict(entries=entries, query=query))
 
 def list_tags(request):
     return render_to_response(
