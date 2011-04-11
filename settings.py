@@ -105,5 +105,5 @@ INSTALLED_APPS = (
 )
 
 HAYSTACK_SITECONF = 'blog.search_sites'
-HAYSTACK_SEARCH_ENGINE = 'solr'
-HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
+HAYSTACK_SEARCH_ENGINE = 'xapian'
+HAYSTACK_XAPIAN_PATH = absolute_path('../index_xapian/')
